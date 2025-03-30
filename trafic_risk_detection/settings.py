@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "drowsiness-detection-x13u.onrender.com/",
+    "drowsiness-detection-x13u.onrender.com",
+    "https://drowsiness-detection-x13u.onrender.com/"
 ]
 
 #https://drowsiness-detection-x13u.onrender.com/
