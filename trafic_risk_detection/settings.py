@@ -25,9 +25,13 @@ SECRET_KEY = 'django-insecure-!)gj!mnl!0wylyn+q3*euua#3(20(fcaw4ti!xce$jg5%ey^j@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "drowsiness-detection-x13u.onrender.com/",
+]
 
-
+#https://drowsiness-detection-x13u.onrender.com/
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trafic_model'
 ]
 
 MIDDLEWARE = [
@@ -115,7 +120,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "/static/"
+import os
+# Define the directory where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# If STATICFILES_DIRS is not needed, remove it OR ensure the directory exists
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+# Ensure static directory exists
+os.makedirs(STATICFILES_DIRS[0],exist_ok=True)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
